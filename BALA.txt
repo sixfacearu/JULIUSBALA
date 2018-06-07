@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+public class HelloWorld {
+
+     public static void main(String []args) throws Exception{
+         Scanner x =  new Scanner(System.in); 
+            String y = x.nextLine();
+            char[] char_arr = y.toCharArray();
+            char[] rever_arr = new char[y.length()];
+             int ascii_o = (int) char_arr[0];
+             
+             
+             if(ascii_o >= 97 && ascii_o <=122){
+                 int temp = ascii_o - 32;
+                 char ch_char = (char) temp;
+                 rever_arr[0] = ch_char;
+                 
+             }else if(ascii_o >= 65 && ascii_o <=97){
+                 char kls = (char) ascii_o;
+                 rever_arr[0] = kls;
+             }
+             
+             for(int i=1;i<char_arr.length;i++)
+             {
+                 
+                 int temp = (int) char_arr[i];
+                 if(temp >= 97 && temp <= 122){
+                     char lv = (char) temp;
+                     rever_arr[i] = lv;
+                 }
+                   else if( temp >= 65 && temp<= 90){
+                     
+                     int jk = temp + 32;
+                     char ux = (char) jk;
+                     rever_arr[i] = ux;
+                     
+                }else if(temp == 32){
+                     
+                     char space_r = (char) temp;
+                     rever_arr[i] = space_r;
+                     
+                     char atnext = char_arr[i + 1];
+                     int at_int = (int) atnext;
+                     
+                     if(at_int >= 97 && at_int <= 122){
+                         
+                         int hjg = at_int - 32;
+                         char mx = (char) hjg;
+                         rever_arr[i + 1] = mx;
+                     }else if(at_int >= 65 && at_int <= 90){
+                         
+                       
+                         char img = (char) at_int;
+                         rever_arr[i + 1] = img;
+                     }
+                     
+                     i++;
+                     
+                     }
+                     
+                     
+                   
+             }
+                
+                
+                String final_o =  String.valueOf(rever_arr); 
+                
+                System.out.println(final_o);
+    
+            
+        
+        
+    
+            
+            
+        
+     }
+}
