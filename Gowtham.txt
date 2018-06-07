@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class HelloWorld 
+{
+public static void main(String []args) throws Exception
+{
+Scanner x = new Scanner(System.in); 
+String y = x.nextLine();
+char[] char_arr = y.toCharArray();
+char[] rever_arr = new char[y.length()];
+
+int ascii_o = (int) char_arr[0];
+if(ascii_o >= 97)
+{
+int temp = ascii_o - 32;
+char ch_char = (char) temp;
+rever_arr[0] = ch_char;
+}
+else
+{
+rever_arr[0] = char_arr[0];
+}
+
+for(int i=1;i<char_arr.length;i++)
+{
+int temp = (int) char_arr[i];
+if(temp == 32)
+{
+rever_arr[i] = (char)32;
+
+ascii_o = (int) char_arr[i+1];
+if(ascii_o >= 97)
+{
+temp = ascii_o - 32;
+char ch_char = (char) temp;
+rever_arr[i+1] = ch_char;
+}
+else
+{
+rever_arr[i+1] = char_arr[i+1];
+}
+i++;
+}
+else
+{
+
+if(temp < 97)
+{
+ascii_o = (int) char_arr[i];
+temp = ascii_o + 32;
+char ch_char = (char) temp;
+rever_arr[i] = ch_char;
+}
+else
+{
+rever_arr[i] = char_arr[i];
+}
+}
+}
+String final_o = String.valueOf(rever_arr); 
+System.out.println(final_o);
+}
+}
